@@ -1,7 +1,7 @@
 # you can copy the tinker keep rule at
 # build/intermediates/tinker_intermediates/tinker_multidexkeep.pro
 
--keep class com.tencent.tinker.loader.** {
+-keep class com.tencent.tinker.loader.** { 
     *;
 }
 
