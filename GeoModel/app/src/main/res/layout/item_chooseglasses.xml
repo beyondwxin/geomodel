@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/iv_glasses"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:padding="0.1dip"
+        android:scaleType="fitCenter" />
+
+    <ImageView
+        android:id="@+id/iv_selected"
+        android:layout_width="@dimen/size_40"
+        android:layout_height="@dimen/size_40"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_selected"
+        android:visibility="gone" />
+
+</FrameLayout>

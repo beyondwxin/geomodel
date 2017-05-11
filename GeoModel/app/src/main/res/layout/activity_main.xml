@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="android.widget.BaseAdapter" />
+    </data>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/dl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/top"
+                    layout="@layout/layout_maintopbar" />
+
+                <com.cjj.MaterialRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/top"
+                    app:overlay="false"
+                    app:wave_color="@color/colorPrimaryDark"
+                    app:wave_height_type="normal"
+                    app:wave_show="true">
+
+                    <com.king.geomodel.utils.widget.EmptyRecyclerView
+                        android:id="@+id/lv_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/refresh"
+                        android:background="@color/colorWhite" />
+                </com.cjj.MaterialRefreshLayout>
+
+                <TextView
+                    android:id="@+id/tv_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/img_add"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:textColor="@color/white" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/pagerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <com.king.geomodel.utils.album.AlbumViewPager
+                    android:id="@+id/albumviewpager"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/album_item_bg" />
+
+                <include
+                    android:id="@+id/album_item_header_bar"
+                    layout="@layout/album_item_header_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <include
+            android:id="@+id/id_empty_view"
+            layout="@layout/layout_empty_view"/>
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/drawerLayout"
+            layout="@layout/layout_drawerlayout"></include>
+    </android.support.v4.widget.DrawerLayout>
+</layout>

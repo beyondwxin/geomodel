@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View"></import>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/list_item_focus"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:id="@+id/post_edit_container"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_topbar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_title"
+                    android:textColor="@color/notInputHintColor"
+                    android:textSize="@dimen/textsize_16" />
+
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:hint="@string/text_titleHint"
+                    android:maxLength="5"
+                    android:singleLine="true"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorGray"
+                    android:textSize="@dimen/textsize_14" />
+
+            </LinearLayout>
+
+
+            <HorizontalScrollView
+                android:id="@+id/post_scrollview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorWhite"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_140"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="10dp">
+
+                    <com.king.geomodel.utils.album.FilterImageView
+                        android:id="@+id/post_add_pic"
+                        android:layout_width="@dimen/size_100"
+                        android:layout_height="@dimen/size_100"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/post_add_pic" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/post_pic_remain"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingRight="10dp"
+                android:text="0/3"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/textsize_12"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tv_describe"
+                    android:textColor="@color/notInputHintColor"
+                    android:textSize="@dimen/textsize_16" />
+
+                <EditText
+                    android:id="@+id/et_des"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:background="@null"
+                    android:gravity="top"
+                    android:hint="@string/text_desHint"
+                    android:textColor="@color/colorblack"
+                    android:textColorHint="@color/colorGray"
+                    android:textSize="@dimen/textsize_14" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/pagerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.king.geomodel.utils.album.AlbumViewPager
+                android:id="@+id/albumviewpager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/album_item_bg" />
+
+            <include
+                android:id="@+id/album_item_header_bar"
+                layout="@layout/album_item_header_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top" />
+        </FrameLayout>
+
+        <include layout="@layout/layout_placeview" />
+
+        <Button
+            android:id="@+id/btn_finish"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/seletor_button_loginbg"
+            android:enabled="false"
+            android:onClick="onClick"
+            android:text="@string/text_finish"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_18" />
+    </LinearLayout>
+</layout>

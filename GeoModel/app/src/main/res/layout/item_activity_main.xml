@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:lv="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="android.widget.BaseAdapter" />
+
+        <variable
+            name="geoModel"
+            type="com.king.greenDAO.bean.GeoModel" />
+
+        <import type="android.text.TextUtils"></import>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/layoutItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="@={geoModel.time}"
+                android:textColor="@color/gray_6"
+                android:textSize="@dimen/textsize_18" />
+
+
+            <com.flyco.labelview.LabelView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                lv:lv_background_color="@color/col_bgsave"
+                lv:lv_gravity="TOP_RIGHT"
+                lv:lv_min_size="5dp"
+                lv:lv_text_color="@color/col_text"
+                lv:lv_text_size="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:text="@={geoModel.title}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textsize_18"
+            android:textStyle="bold" />
+
+
+        <com.king.geomodel.utils.widget.view.GridViewForListView
+            android:id="@+id/photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:columnWidth="90dp"
+            android:gravity="center_horizontal"
+            android:horizontalSpacing="5dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="5dp"
+            app:adapter="@{adapter}" />
+
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:ellipsize="end"
+            android:maxEms="50"
+            android:padding="@dimen/padding_5"
+            android:text="@{geoModel.des}"
+            android:textColor="@color/gray_6"
+            android:textSize="@dimen/textsize_16"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

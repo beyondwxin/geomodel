@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.king.geomodel.view.SettingActivity">
+
+    <include layout="@layout/layout_topbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_logo"/>
+
+        <TextView
+            android:id="@+id/tv_currentVersion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_currentVersion"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="@dimen/textsize_12" />
+
+        <!--版本更新-->
+        <TextView
+            android:id="@+id/tv_checkUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_item_selector"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:padding="@dimen/padding_10"
+            android:text="@string/tv_checkUpdate"
+            android:textColor="@color/gray_3"
+            android:textSize="@dimen/textsize_16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/default_line_color" />
+
+        <!--清除缓存-->
+        <LinearLayout
+            android:id="@+id/ll_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_item_selector"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:onClick="onClick"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tv_clear"
+                android:textColor="@color/gray_3"
+                android:textSize="@dimen/textsize_16" />
+
+            <TextView
+                android:id="@+id/tv__cacheSize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/gray_6"
+                android:textSize="@dimen/textsize_14" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/default_line_color" />
+
+
+        <!--推送消息-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_item_selector"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_8">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tv_swithMessage"
+                android:textColor="@color/gray_3"
+                android:textSize="@dimen/textsize_16" />
+
+            <com.king.geomodel.view.SwitchButton
+                android:id="@+id/sButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:kswTintColor="@color/colorPrimaryDark" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/default_line_color" />
+
+        <!--修改密码-->
+
+        <TextView
+            android:id="@+id/tv_modifyPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_item_selector"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:padding="@dimen/padding_10"
+            android:text="@string/tv_modifyPassword"
+            android:textColor="@color/gray_3"
+            android:textSize="@dimen/textsize_16" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/default_line_color" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/list_item_selector"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:padding="@dimen/padding_10"
+            android:text="@string/tv_about"
+            android:textColor="@color/gray_3"
+            android:textSize="@dimen/textsize_16" />
+
+    </LinearLayout>
+</LinearLayout>

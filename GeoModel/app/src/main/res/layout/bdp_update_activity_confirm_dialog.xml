@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="40dip"
+    android:layout_marginRight="40dip"
+    android:background="@null"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dip"
+        android:background="@drawable/bdp_update_bg_dialog_title"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bdp_update_bg_dialog_content"
+        android:orientation="vertical"
+        android:paddingBottom="14dip">
+
+        <TextView
+            android:id="@+id/txt_main_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dip"
+            android:ellipsize="end"
+            android:padding="@dimen/padding_5"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="@dimen/padding_10"
+            android:layout_marginRight="@dimen/padding_10"
+            android:fadingEdge="vertical"
+            android:fadingEdgeLength="20dip"
+            android:requiresFadingEdge="vertical">
+
+            <TextView
+                android:id="@+id/txt_minor_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_action_1"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="@dimen/padding_20"
+            android:layout_marginRight="@dimen/padding_20"
+            android:background="@drawable/bdp_update_bg_dialog_title"
+            android:textColor="#ffffffff"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/lin_other_btns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/txt_action_2"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/bdp_update_not_now"
+                android:textColor="#ffabbed9"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txt_action_3"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/bdp_update_ignore"
+                android:textColor="#ffabbed9"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
